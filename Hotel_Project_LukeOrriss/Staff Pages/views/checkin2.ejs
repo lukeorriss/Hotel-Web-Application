@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception</title>
+	<link rel="stylesheet" href="hotel.css">
+	
+
+</head>
+<body>
+	<main>
+		<h1>Booking details</h1>
+		<br>
+		<br>
+		<div>
+			<p>The details for booking reference <%= bookingRef %> are:</p>
+			<ul>
+				<li>Room number: <%= roomNo %></li>
+				<li>Checkin date: <%= checkin %></li>
+				<li>Checkout date: <%= checkout %></li>
+
+		
+			<br>
+				<div class="updateroom">
+				<fieldset>
+				<legend>Checkin customer</legend>
+					<form class= "checkin" action="http://localhost:5000/checkin2"  method="post">
+						<input type ="hidden" name ="roomNo" value ="<%= roomNo %>">
+						<input type ="hidden" name ="bookingRef" value ="<%= bookingRef %>">
+						<input type ="hidden" name ="checkin" value ="<%= checkin %>">
+						<input type ="hidden" name ="checkout" value ="<%= checkout %>">
+						<input id = "submit" type= "submit" value= "Checkin">
+					</form>
+					<br>
+					<form action="/recep">
+						<input id = "submit" type="submit" value="Reception Menu" />
+					</form>
+				</fieldset>	
+				</div>
+				
+				
+				<div>
+					<% if (update === false){ %>
+						<%  //pass %>
+					<% } else{ %>
+						Customer has been checked-in. 
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

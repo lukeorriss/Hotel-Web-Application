@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+	<script src="add_room5.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking</title>
+	<link rel="stylesheet" href="nav.css"/>
+    <link rel="stylesheet" href="hotel.css"/>
+</head>
+
+<body>
+    <div class="titlebar">
+		<a href="index.html"><img src="images/bisheephone.png" alt="Bishee Barnabee Home"></a>
+	</div>
+	<div class="fullscreenmenu" animation="center">
+		<ul>
+			<div>
+				<a href="account.html">Sign In</a>
+				<span><a>|</a></span>
+				<a href="about.html">About</a>
+				<a href="http://localhost:5000/booking">Booking</a>
+				<a href="norwich.html">Area</a>
+				<a href="functions.html">Functions</a>
+				<a href="facilities.html">Facilities</a>
+				<a href="rooms.html">Rooms</a>
+			</div>
+		</ul>	
+	</div>
+	<div class="mobilemenu"></div>
+	<div class="menu-wrap">
+		<input type="checkbox" class="toggler">
+		<div class="hamburger"><div></div></div>
+		<div class="menu">
+			<div>
+				<div>
+					<ul>
+						<li><a href="rooms.html">Rooms</a></li>
+						<li><a href="facilities.html">Facilities</a></li>
+						<li><a href="functions.html">Functions</a></li>
+						<li><a href="norwich.html">Area</a></li>
+						<li><a href="http://localhost:5000/booking">Booking</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="account.html">Log In</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+    <header>
+		<h1 id= "title">Book Your Stay</h1>
+		
+	</header>
+	
+	<main>
+	<div id= "pageContent">
+		<div id= "intro">
+			<p id = "intro">We have rooms available! </p>
+		</div>
+		
+		<div>
+		<p>Your selected rooms are available for <%= guest%> guest(s) for <%= nights %> night(s) from <%= checkIn %> until <%= checkOut %></p>
+		<p>The total cost of your stay will be £<%= totalCost %>. 
+		
+		</div>
+		
+		<div>
+			<p>Please enter your details below to confirm your booking:</p><br>
+			<p>Required information is marked with an asterisk (*)</p><br>
+			<fieldset>
+			<legend>Payment details</legend>
+			<form id="payment" action="http://localhost:5000/payment" method= "post"> 
+				<input type ="hidden" name ="std_d" value ="<%= stdD %>">
+				<input type ="hidden" name ="std_t" value ="<%= stdT %>">
+				<input type ="hidden" name ="sup_d" value ="<%= supD %>">
+				<input type ="hidden" name ="sup_t" value ="<%= supT %>">
+				<input type ="hidden" name ="totalCost" value ="<%= totalCost %>">
+				<input type ="hidden" name ="guest" value ="<%= guest %>">
+				<input type ="hidden" name ="nights" value ="<%= nights %>">
+				<input type ="hidden" name ="checkIn" value ="<%= checkIn %>">
+				<input type ="hidden" name ="checkOut" value ="<%= checkOut %>">
+				<label for "name" >Name*:</label>
+				<input type= "text" id= "name" name = "name" placeholder = "Name" maxlength="80" accesskey= "F" required><br>
+				<label for "email"> Email*:</label>
+				<input type = "email" id= "email" name = "email" placeholder= "Enter your email addresss" maxlength="60" accesskey= "E" required><br>
+				<label for "address" >Address*:</label>
+				<textarea id= "address" name = "address" placeholder = "Address" maxlength="200" accesskey= "A" required></textarea><br>
+				<label for "notes" >Additional information:</label>
+				<textarea id= "notes" name = "notes" placeholder = "Extra information" maxlength="300" ></textarea><br>
+				<label for "card_type">Card type*:</label>
+				<select name="cardType" id="cardType">
+					<option value= "V">Visa</option>
+					<option value= "MC">MasterCard</option>
+					<option value= "A">AMEX</option>
+				</select>
+				<br>
+				<label for "c_cardexp">Card expiry date (MM/YY)*:</label>
+				<input type="text" id ="c_cardexp" name ="c_cardexp" pattern="([0-9]{2}[/]?){2}" /><br>
+				<label for "c_cardno ">Card number*:</label>
+				<input type="text" id ="c_cardno" name ="c_cardno" pattern="([0-9]{16})" /><br>
+					
+				
+				<input id = "submit" type= "submit" value= "Confirm booking">
+			</form>
+			</fieldset>
+		</div>
+	</div>
+	</main>
+
+
+
+
+
+    <footer>
+        <p>Copyright © 2020 Bishee Barnabee </p>
+        <div class="scrollupanim">
+            <script type="text/javascript" src="scrollupanim.js"></script>
+        </div>
+    </footer>   
+</body>
+</html>

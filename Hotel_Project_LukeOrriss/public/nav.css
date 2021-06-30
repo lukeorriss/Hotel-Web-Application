@@ -1,0 +1,311 @@
+/* Full Screen */
+
+/* Bishee Logo */
+.titlebar {
+    padding-top: 7px;
+    padding-left: 10px;
+    position: fixed;
+    z-index: 4;
+}
+.titlebar img {
+    width: 380px;
+    cursor: pointer;
+}
+
+/* Blurred Background of Navigation Bar */
+.fullscreenmenu {
+    padding: 9px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 102, 186, 0.619);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid grey;
+    box-shadow: 4px 6px 20px 0px rgba(0,0,0,0.15);
+}
+
+/* Text of Navigation Bar */
+.fullscreenmenu a {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    padding-left: 25px;
+    margin-left: 5px;
+    position: relative;
+    float: right;
+    display: flex;
+    margin-bottom: 5px;
+    top: -3px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+
+}
+
+.fullscreenmenu span a:hover {
+    color: black;
+    
+}
+
+
+/* Animate Nav Text On Mouse Hover */
+.fullscreenmenu a:hover {
+    color: rgb(255, 255, 255);
+    transition: all 0.5s ease-in-out;
+    text-shadow: 4px 6px 20px 0px rgba(0,0,0,0.);
+    
+}
+
+
+/* Hides the Mobile Menu When on > 1024px width devices */
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+}
+
+
+
+
+/* Mobile */
+
+
+@media only screen and (max-width: 1024px) {
+    .titlebar {
+        padding-top: 9px;
+        padding-left: 10px;
+        position: absolute;
+        z-index: 2;
+    }
+    .titlebar img {
+        width: 380px;
+        cursor: pointer;
+    }
+
+    .fullscreenmenu {
+        display: none;
+    }
+
+    .mobilemenu {
+        padding: 29px;
+        width: 94%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: rgba(0, 102, 186, 0.619);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid grey;
+        box-shadow: 4px 6px 20px 0px rgba(0,0,0,0.25);
+    }
+
+    .menu-wrap {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        visibility: unset;
+    }
+    
+    .menu-wrap .toggler {
+        position: absolute;
+        top:0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    
+    .menu-wrap .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+        background: rgba(0, 102, 186, 0.619);
+        backdrop-filter: blur(6px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* box-shadow: -2px 5px 20px 0px rgba(0,0,0,0.47); */
+    }
+    
+    /* Hamburger Lines */
+    
+    .menu-wrap .hamburger > div {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    /* Top and Bottom Lines */
+    .menu-wrap .hamburger > div:before, .menu-wrap .hamburger > div:after {
+        content:'';
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+    
+    /* Bottom lines */
+    .menu-wrap .hamburger > div:after {
+        top: 10px;
+    }
+
+
+    
+    /* Toggler animation */
+    .menu-wrap .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+    
+    /* Turn lines into x  */
+    .menu-wrap .toggler:checked + .hamburger > div:before, .menu-wrap .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    /* Rotate on hover when checked */
+    .menu-wrap .toggler:checked:hover + .hamburger > div {
+        /* transform: rotate(225deg); */
+    }
+    
+    
+    /* Show Menu */
+    .menu-wrap .toggler:checked ~ .menu {
+        visibility: visible;
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div {
+        /* transition: 0.1s ease-out; */
+        transform: scale(1)
+        
+    }
+    
+    
+    .menu-wrap .toggler:checked ~ .menu > div > div {
+        opacity: 1;
+        transform: scale(1)
+        /* transition: 0.5s ease; */
+    }
+    
+    .menu-wrap .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .menu-wrap .menu > div {
+        background-color: rgba(0, 102, 186, 0.619);
+        backdrop-filter: blur(20px);
+        border-radius: 100%;
+        width: 300vw; 
+        height: 300vw;
+        display: flex;
+        flex: none;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        
+    }
+    
+    .menu-wrap .menu > div > div {
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vw;
+        opacity: 0;
+        
+    }
+    
+    .menu-wrap .menu > div > div > ul > li {
+        list-style: none;
+        color: black;
+        font-size: 1.5rem;
+        padding: 1rem;
+        border-bottom: 1px solid black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+    }
+    
+    .menu-wrap .menu > div > div > ul > li:hover {
+        color: rgb(255, 255, 255);
+        transition: 0.5s ease-in-out;
+    }
+
+
+    .menu-wrap .menu > div > div > ul > li > a {
+        color: inherit;
+        text-decoration: none;
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .titlebar {
+        padding-top: 14px;
+        padding-left: 15px;
+        position: absolute;
+        z-index: 1;
+    }
+    .titlebar img {
+        width: 275px;
+        cursor: pointer;
+    }
+
+    .fullscreenmenu {
+        display: none;
+    }
+
+    .mobilemenu {
+        padding: 29px;
+        width: 92%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        background-color: rgba(0, 102, 186, 0.619);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid grey;
+    }
+
+}

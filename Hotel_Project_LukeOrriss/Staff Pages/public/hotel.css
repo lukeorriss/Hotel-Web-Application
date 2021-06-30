@@ -1,0 +1,387 @@
+body {
+    /* background-color: #E2F0F3; */
+	background-color: #f1f1f1;
+    min-height: 100vh;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#
+  
+  
+
+select{
+	padding:10px;
+	border-radius: 4px;
+	margin:10px;
+}
+
+
+main {
+  min-height: 100%;
+  
+}
+
+/*this formats the table showing which rooms are available if the room they've chosen isnt*/
+
+.availableRooms{
+  border: 1px solid #F65E5E;
+  height: 15px;
+  margin-right: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: darkred;
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+p {
+    font-weight: bold;
+}
+
+legend {
+    color: grey;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+th {
+    border: 2px solid black;
+}
+
+
+h2 {
+	color:#9f1c20;
+}
+
+
+/*this formats the text input boxes on the forms */
+input[type = text]{
+	box-shadow: 0 0 15px 4px rgba (0, 0,0,0,0.6);
+	border-radius: 4px;
+	margin: 10px;
+	padding: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*this formats the textarea input boxes on the forms */
+textarea{
+	box-shadow: 0 0 15px 4px rgba (0, 0,0,0,0.6);
+	border-radius: 4px;
+	margin: 10px;
+	padding: 10px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	vertical-align: middle;
+	height: 80px;
+}
+
+
+/*this formats the email input box on the forms */
+input[type = email]{
+	box-shadow: 0 0 15px 4px rgba (0, 0,0,0,0.6);
+	border-radius: 4px;
+	margin: 10px;
+	padding: 10px;
+}
+
+/*this formats the date choices on the forms */
+input[type = date]{
+	margin: 10px;
+	box-shadow: 0 0 15px 4px rgba (0, 0,0,0,0.6);
+	border-radius: 4px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*this formats the labels on the forms */
+label{
+	width: 160px;
+	display:inline-block;
+}
+
+/*This formats the card exiry date entry*/
+#c_cardexp{
+	box-shadow: 0 0 15px 4px rgba (0, 0,0,0,0.6);
+	border-radius: 4px;
+	margin: 10px;
+	padding: 10px;
+	text-align: left;
+	width: 70px;
+}
+
+.housekeeping td{	
+	text-align: center;
+	color: darkred;
+	font-size:  14pt;
+	padding: 4px;
+	margin: 4px;
+	background-color: rgba(228, 228, 228, 0.618);
+	font-family: Verdana, G
+}
+.housekeeping th {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 14pt;
+	border-bottom: 2px solid black;
+	padding: 4px;
+	
+}
+.housekeeping legend {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: grey;
+	text-align: center;
+}
+.housekeeping p {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: black;
+	font-size: 15pt;
+}
+
+.housekeeping table {
+	width:100%;
+}
+
+
+/*This formats the title of each page*/
+#title{
+  width:100%;
+  text-align:center;
+  font-size:30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-top:35px;
+  margin-top:25px;
+}
+
+/*This formats the first paragraph of each page*/
+#intro{
+  width: 100%;
+  text-align:center;
+  font-size:20px;
+  margin-bottom: 25px;
+  padding-left:5px;
+  padding-right:5px;
+  font-weight: bold;
+}	
+
+
+
+ #submit{
+	display:flex;
+	transition-duration: 0.4s;
+	border-radius: 4px;
+	font-size: 15px;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-left: 10px;
+	cursor:pointer;
+	color: #7dbaff;
+	background-color: white;
+}
+
+
+  #submit:hover{
+	background-color:#7dbaff;
+	color:white; 
+	font-size: 15px;
+	padding: 12px 28px;
+	
+}
+
+#mobile {display:none;}
+
+#desktop {display:inline;}
+
+
+
+
+
+* {box-sizing: border-box;}
+
+
+
+@media only screen and (max-width:1500px) {
+	
+	
+	
+	#intro{
+		text-align: center;
+	}
+	
+	#title{
+		padding-top:100px;
+	}
+	
+	body {
+		margin:0;
+		padding:0;
+		min-height: 100vh;
+	}
+
+	
+	main {
+		padding-top:2.5em;
+		padding-bottom:2.5em;
+		padding-left:1em;
+		padding-right:1em;
+		margin:0;
+		font-size:90%;
+	}
+
+	h2{
+		padding-left:2em;
+		padding-right:2em;
+	}
+	
+	h3{
+		padding-left:2em;
+		padding-right:2em;
+	}
+
+	p{
+		padding-left:2em;
+		padding-right:2em;
+		text-align:left;
+	}
+
+	
+
+	ul{
+		padding-left:2em;
+		padding-right:2em;
+	}
+	
+	main ul{
+		margin:2em;
+	}
+	
+	
+	
+	.content {
+  flex-direction: column;
+  text-align: left;
+	}
+	
+
+	
+}
+
+@media only screen and (max-width:1150px) {
+	
+	#intro{
+		text-align: center;
+	}
+	
+	#title{
+		padding-top:100px;
+	}
+	
+	body {
+		margin:0;
+		padding:0;
+		min-height: 100vh;
+	}
+
+	
+	main {
+		padding-top:2.5em;
+		padding-bottom:2.5em;
+		padding-left:1em;
+		padding-right:1em;
+		margin:0;
+		font-size:90%;
+	}
+
+	h2{
+		padding-left:2em;
+		padding-right:2em;
+	}
+	
+	h3{
+		padding-left:2em;
+		padding-right:2em;
+	}
+
+	p{
+		padding-left:2em;
+		padding-right:2em;
+		text-align:left;
+	}
+
+	
+
+	ul{
+		padding-left:2em;
+		padding-right:2em;
+	}
+	
+	main ul{
+		margin:2em;
+	}
+	
+	
+	
+}
+
+
+
+
+
+@media only screen and (max-width:768px){
+	h1{
+		font-size:2em;
+		padding-top:2.25em;
+		padding-left:1.5em;
+		width:85%;
+	}
+	
+	
+	main{
+		padding:0;
+	}
+	
+
+	#mobile{
+		display:inline;
+	}
+	
+	#desktop{
+		display:none;
+	}
+	#title{
+		padding-top:10px;
+		text-align: center;
+	
+	}
+	
+	#intro{
+		text-align: center;
+	}
+	
+
+}
+
+
+@media only screen and (max-width:450px) {
+	#title{
+		padding-top:20px;
+		margin-top: 50px;
+		text-align: center;
+		font-size: 25px;
+	}
+	#intro{
+		font-size: 15px;
+		text-align: center;
+	}
+	
+	
+}
+
+
+

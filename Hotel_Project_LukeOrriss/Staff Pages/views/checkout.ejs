@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception</title>
+	<link rel="stylesheet" href="hotel.css">
+	
+
+</head>
+<body>
+	<main>
+		<h1>Check-out</h1>
+		<br>
+		<br>
+		<div>
+		<div class="checkout">
+			<fieldset>
+			<legend>Booking Reference</legend>
+				<form class= "checkin" action="http://localhost:5000/checkout"  method="post">
+					<label for "bookingRef" >Booking Reference:</label>
+					<input type= "text" id= "rbookingRef" name = "bookingRef"  maxlength="5" accesskey= "R" required><br>
+					<br>
+					<input id = "submit" type= "submit" value= "Retrieve payment information">
+				</form>
+				<br>
+				<form action="/recep">
+					<input id = "submit" type="submit" value="Reception Menu" />
+				</form>
+			</fieldset>	
+		</div>
+	</main>
+</body>	

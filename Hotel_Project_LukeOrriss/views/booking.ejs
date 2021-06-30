@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+	<script src="add_room5.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking</title>
+	<link rel="stylesheet" href="nav.css"/>
+    <link rel="stylesheet" href="hotel.css"/>
+</head>
+
+<body>
+    <div class="titlebar">
+		<a href="index2.html"><img src="images/bisheephone.png" alt="Bishee Barnabee Home"></a>
+	</div>
+	<div class="fullscreenmenu" animation="center">
+		<ul>
+			<div>
+				<a href="about.html">About</a>
+				<a href="http://localhost:5000/booking">Booking</a>
+				<a href="norwich.html">Area</a>
+				<a href="functions.html">Functions</a>
+				<a href="facilities.html">Facilities</a>
+				<a href="rooms.html">Rooms</a>
+			</div>
+		</ul>	
+	</div>
+	<div class="mobilemenu"></div>
+	<div class="menu-wrap">
+		<input type="checkbox" class="toggler">
+		<div class="hamburger"><div></div></div>
+		<div class="menu">
+			<div>
+				<div>
+					<ul>
+						<li><a href="rooms.html">Rooms</a></li>
+						<li><a href="facilities.html">Facilities</a></li>
+						<li><a href="functions.html">Functions</a></li>
+						<li><a href="norwich.html">Area</a></li>
+						<li><a href="booking.html">Booking</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="account.html">Log In</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+    <header>
+		<h1 id= "title">Book Your Stay</h1>
+		
+	</header>
+	
+	<main>
+	<div id= "pageContent">
+		<div id= "intro">
+			<p id = "intro">We can't wait to welcome you to the Bishee Barnabee! Enter your details below to book your stay now.</p>
+		</div>
+		<div>
+			<% if(allRoomsAreOk === true){ %>
+				<% //pass %>
+				
+			<% } else { %>
+				<p><%= message %></p>
+			<table class= "availableRooms">
+				<tr class= "availableRooms">
+					<th class= "availableRooms">Standard-Twin</th>
+					<th class= "availableRooms">Standard-Double</th>
+					<th class= "availableRooms">Superior-Twin</th>
+					<th class= "availableRooms">Superior-Double</th>
+				</tr>
+				<tr class= "availableRooms">
+					<td class= "availableRooms"><%= stdT %></td>
+					<td class= "availableRooms"><%= stdD %></td>
+					<td class= "availableRooms"><%= supT %></td>
+					<td class= "availableRooms"><%= supD %></td>
+				</tr>
+			</table>
+					
+			
+			<% } %>
+		
+		</div>
+		
+		<div>
+			<p>Required information is marked with an asterisk (*)</p><br>
+			<fieldset>
+			<legend>Booking details</legend>
+			<form id="booking" action="http://localhost:5000/booking" method= "post"> 
+				<label for="start">Check-in* :</label>
+				<input type="date" id="start" name="start" max="2021-31-12" accesskey= "S" required><br>
+				<label for="start">Check-out* :</label>
+				<input type="date" id="end" name="end" max="2021-31-12" accesskey= "E" required><br>
+				<label for "guest">Number of Guests:</label>
+				<select name="guest" id="guest">
+					<option value= "1">1</option>
+					<option value= "2">2</option>
+					<option value= "3">3</option>
+					<option value= "4">4</option>
+					<option value= "5">5</option>
+					<option value= "6">6</option>
+				</select>
+				<br>
+				<label for "room_no">Number of Rooms:</label>
+				<select name="room_no" id="room_no">
+					<option value= "1">1</option>
+					<option value= "2">2</option>
+					<option value= "3">3</option>
+					<option value= "4">4</option>
+					<option value= "5">5</option>
+					<option value= "6">6</option>
+				</select>
+				<br>
+				<div class= "room roomshow">
+					<label for "room_1">Room Type:</label>
+					<select name="room" id="room_1">
+						<option value= "std_t">Standard Twin</option>
+						<option value= "std_d">Standard Double</option>
+						<option value= "sup_t">Superior Twin</option>
+						<option value= "sup_d">Superior Double</option>
+					</select>
+				</div>
+				<div class= "room roomhide">
+					<label for "room_2">Room 2 Type:</label>
+					<select name="room" id="room_2">
+						<option value= "std_t">Standard Twin</option>
+						<option value= "std_d">Standard Double</option>
+						<option value= "sup_t">Superior Twin</option>
+						<option value= "sup_d">Superior Double</option>
+					</select>
+				</div>
+				<div class= "room roomhide">
+					<label for "room_3">Room 3 Type:</label>
+					<select name="room" id="room_3">
+						<option value= "std_t">Standard Twin</option>
+						<option value= "std_d">Standard Double</option>
+						<option value= "sup_t">Superior Twin</option>
+						<option value= "sup_d">Superior Double</option>
+					</select>
+				</div>
+				<div class= "room roomhide">
+					<label for "room_4">Room 4 Type:</label>
+					<select name="room" id="room_4">
+						<option value= "std_t">Standard Twin</option>
+						<option value= "std_d">Standard Double</option>
+						<option value= "sup_t">Superior Twin</option>
+						<option value= "sup_d">Superior Double</option>
+					</select>
+				</div>
+				<div class= "room roomhide">
+					<label for "room_5">Room 5 Type:</label>
+					<select name="room" id="room_5">
+						<option value= "std_t">Standard Twin</option>
+						<option value= "std_d">Standard Double</option>
+						<option value= "sup_t">Superior Twin</option>
+						<option value= "sup_d">Superior Double</option>
+					</select>
+				</div>
+				<div class= "room roomhide">
+					<label for "room_6">Room 6 Type:</label>
+					<select name="room" id="room_6">
+						<option value= "std_t">Standard Twin</option>
+						<option value= "std_d">Standard Double</option>
+						<option value= "sup_t">Superior Twin</option>
+						<option value= "sup_d">Superior Double</option>
+					</select>
+				</div>
+				<br>
+				<input id = "submit" type= "submit" value= "Check Availability">
+			</form>
+			</fieldset>
+		</div>
+	</div>
+	</main>
+
+
+
+
+
+    <footer>
+		<div id= "setlFooter">
+			<p>Copyright © 2020 Bishee Barnabee </p>
+			<div class="scrollupanim">
+				<script type="text/javascript" src="scrollupanim.js"></script>
+			</div>
+		</div>
+    </footer>   
+</body>
+</html>

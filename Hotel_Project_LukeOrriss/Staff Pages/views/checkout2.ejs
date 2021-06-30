@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception</title>
+	<link rel="stylesheet" href="hotel.css">
+	
+
+</head>
+<body>
+	<main>
+
+		<h1>Payment details</h1>
+		
+
+			<table>
+				<tr class= "housekeeping">
+					<th class= "housekeeping">Booking Ref</th>
+					<th class= "housekeeping">Outstanding</th>
+					<th class= "housekeeping">Notes</th>
+					<th class= "housekeeping">Customer No</th>
+					<th class= "housekeeping">Name</th>
+					<th class= "housekeeping">Address</th>
+					<th class= "housekeeping">Card Type</th>
+					<th class= "housekeeping">Card Expiry</th>
+					<th class= "housekeeping">Card Number</th>
+				</tr>
+				<tr>
+						
+					<td class= "housekeeping"><%= bookingRef %></td>
+					<td class= "housekeeping"><%= outstanding %></td>
+					<td class= "housekeeping"><%= notes %></td>
+					<td class= "housekeeping"><%= cno %></td>
+					<td class= "housekeeping"><%= name %></td>
+					<td class= "housekeeping"><%= address %></td>
+					<td class= "housekeeping"><%= ctype %></td>
+					<td class= "housekeeping"><%= cexpiry %></td>
+					<td class= "housekeeping"><%= cardno %></td>
+					
+				</tr>
+				
+			</table>
+			<div>
+				<div>
+				<fieldset>
+					<form class= "checkin" action="http://localhost:5000/checkout2"  method="post">
+						<input type ="hidden" name ="bookingRef" value ="<%= bookingRef %>">
+						<input type ="hidden" name ="outstanding" value ="<%= outstanding %>">
+						<input type ="hidden" name ="notes" value ="<%= notes %>">
+						<input type ="hidden" name ="cno" value ="<%= cno %>">
+						<input type ="hidden" name ="name" value ="<%= name %>">
+						<input type ="hidden" name ="address" value ="<%= address %>">
+						<input type ="hidden" name ="ctype" value ="<%= ctype %>">
+						<input type ="hidden" name ="cexpiry" value ="<%= cexpiry %>">
+						<input type ="hidden" name ="cardno" value ="<%= cardno %>">
+						<label for "name" >Additional costs:</label>
+						<input type= "text" id= "extras" name= "extras" placeholder= "0.00" value="<%= extra %>">
+						<input type= "submit" value= "Update total" id="total" ><br>
+						<label for "total_cost" >Total cost:</label>
+						<input type = "text" id= "total_cost" name = "total_cost" value = "<%= total %>">
+						<input id = "submit" type= "submit" value= "Payment taken">
+					</form>
+					<br>
+					<form action="/recep">
+						<input id = "submit" type="submit" value="Reception Menu" />
+					</form>
+				</fieldset>	
+				</div>
+				<div>
+					<% if (update === false){ %>
+						<%  //pass %>
+					<% } else{ %>
+						Balance has been updated. 
+					<% } %>
+				</div>
+				
+			</div>
+		</div>
+	</main>
+</body>
+</html>

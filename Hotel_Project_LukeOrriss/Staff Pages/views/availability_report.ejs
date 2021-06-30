@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception</title>
+	<link rel="stylesheet" href="hotel.css">
+	
+
+</head>
+<body>
+	<main>
+		<h1>Availability report</h1>
+		<br>
+		<br>
+		<div>
+			<p>The following rooms are available between <%= start %> and <%= end %>: </p>
+
+		</div>
+		<div>
+			<table class= "housekeeping">
+					<tr class= "housekeeping">
+						<th>Room Number</th>
+						<th>Room Class</th>
+					</tr>
+					<tr class= "housekeeping">
+						<% for(i=0; i<data.length; i++){ %>
+							
+						<td class= "housekeeping"><%= data[i].r_no, %></td>
+						<td class= "housekeeping"><%= data[i].r_class%></td>
+					</tr>
+				<% } %>
+			</table>
+		</div>
+		<br>
+		<br>
+		<form action="/recep">
+			<input id = "submit" type="submit" value="Reception Menu" />
+		</form>
+	</main>
+</body>
+</html>	
+				

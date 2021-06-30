@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housekeeping</title>
+	<link rel="stylesheet" href="hotel.css">
+	
+
+</head>
+<body>
+	<main>
+		<h1>Housekeeping</h1>
+		<br>
+		<br>
+		<div>
+			<legend class= "housekeeping">O = Occupied, A = Available, X = Unavailable (Cleaning In Progress), C = Checked Out.</legend>
+			<br>
+
+			<table class= "housekeeping">
+				<tr class= "housekeeping">
+					<th>Room Number</th>
+					<th>Room Description</th>
+					<th>Room Status</th>
+					<th>Room Notes</th>
+				</tr>
+				<tr class= "housekeeping">
+					<% for(i=0; i<data.length; i++){ %>
+						
+					<td class= "housekeeping"><%= data[i].r_no %></td>
+					
+				
+					
+					<td class= "housekeeping"><%= data[i].r_class %></td>
+					
+			
+					
+					
+					<td class= "housekeeping"><%= data[i].r_status %></td>
+				
+				
+					
+					<td class= "housekeeping"><%= data[i].r_notes %></td>
+					
+				</tr>
+				<% } %>
+			</table>
+			<div>
+			<br>
+				<div class="updateroom">
+				<fieldset>
+				<legend>Update room status</legend>
+					<form class= "housekeeping" action="http://localhost:5000/housekeeping"  method="post">
+						<label for "roomNumber" >Room Number:</label>
+						<input type= "text" id= "roomNumber" name = "roomNumber"  maxlength="3" accesskey= "R" required><br>
+						<label for "roomStauts">Room Status:</label>
+						<select name="roomStatus" id="roomStatus">
+							<option value= "A">A</option>
+							<option value= "O">O</option>
+							<option value= "C">C</option>
+							<option value= "X">X</option>
+						</select>
+						<br>
+						<input id = "submit" type= "submit" value= "Update">
+					</form>
+				</fieldset>	
+				</div>
+				
+				
+				<div>
+					<% if (update === false){ %>
+						<%  //pass %>
+					<% } else{ %>
+						Room number <%= roomNumber %> was updated to status <%= roomStatus %>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

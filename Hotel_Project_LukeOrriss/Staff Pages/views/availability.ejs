@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reception</title>
+	<link rel="stylesheet" href="hotel.css">
+	
+
+</head>
+<body>
+	<main>
+		<h1>Availability</h1>
+		<br>
+		<br>
+		<div>
+			<form id="income" action="http://localhost:5000/availability" method= "post"> 
+					<label for="start">Date from :</label>
+					<input type="date" id="start" name="start"  accesskey= "S" required><br>
+					<label for="start">Date to :</label>
+					<input type="date" id="end" name= "end" accesskey= "E" required><br>
+					<input id = "submit" type= "submit" value= "Get report">
+			</form>
+		</div>
+		<br>
+		<div>
+			<form action="/recep">
+				<input id = "submit" type="submit" value="Reception Menu" />
+			</form>
+		</div>
+	</main>
+</body>
+</html>

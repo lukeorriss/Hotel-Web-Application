@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+	<script src="add_room5.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Booking</title>
+	<link rel="stylesheet" href="nav.css"/>
+    <link rel="stylesheet" href="hotel.css"/>
+</head>
+
+<body>
+    <div class="titlebar">
+		<a href="index.html"><img src="images/bisheephone.png" alt="Bishee Barnabee Home"></a>
+	</div>
+	<div class="fullscreenmenu" animation="center">
+		<ul>
+			<div>
+				<a href="account.html">Sign In</a>
+				<span><a>|</a></span>
+				<a href="about.html">About</a>
+				<a href="http://localhost:5000/booking">Booking</a>
+				<a href="norwich.html">Area</a>
+				<a href="functions.html">Functions</a>
+				<a href="facilities.html">Facilities</a>
+				<a href="rooms.html">Rooms</a>
+			</div>
+		</ul>	
+	</div>
+	<div class="mobilemenu"></div>
+	<div class="menu-wrap">
+		<input type="checkbox" class="toggler">
+		<div class="hamburger"><div></div></div>
+		<div class="menu">
+			<div>
+				<div>
+					<ul>
+						<li><a href="rooms.html">Rooms</a></li>
+						<li><a href="facilities.html">Facilities</a></li>
+						<li><a href="functions.html">Functions</a></li>
+						<li><a href="norwich.html">Area</a></li>
+						<li><a href="http://localhost:5000/booking">Booking</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="account.html">Log In</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+    <header>
+		<h1 id= "title">Booking Confirmed</h1>
+		
+	</header>
+	
+	<main>
+	<div id= "pageContent">
+		<div id= "intro">
+			<p id = "intro">Your booking has been confirmed! Your booking reference is <%= nextBR %>, please make a note of it for future reference. </p>
+		</div>
+		
+		<div id= "details">
+			<p>We have processed your booking for <%= guest%> guest(s) for <%= nights %> night(s) from <%= checkIn %> until <%= checkOut %></p>
+			<p>The total cost of your stay will be £<%= totalCost %> and your card details will be processed when you check out.</p>
+		</div>
+		
+		
+	</div>
+	</main>
+
+
+
+
+
+    <footer>
+        <p>Copyright © 2020 Bishee Barnabee </p>
+        <div class="scrollupanim">
+            <script type="text/javascript" src="scrollupanim.js"></script>
+        </div>
+    </footer>   
+</body>
+</html>
